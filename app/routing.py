@@ -1,5 +1,5 @@
 from django.urls import path
-from app.consumers import EchoConsumer
+from app.consumers import EchoConsumer, LiveblogConsumer
 
 
 '''
@@ -8,5 +8,6 @@ from app.consumers import EchoConsumer
 우리가 asgi 에 정의한대로 직접 임포트하여 지정하기에 다른 이름이어도 됨
 '''
 websocket_urlpatterns = [
+    path("ws/liveblog/", LiveblogConsumer.as_asgi()),
     path("ws/echo/", EchoConsumer.as_asgi()),
 ]
