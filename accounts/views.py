@@ -23,6 +23,7 @@ login = LoginView.as_view(
         "submit_label": "로그인",
     },
 )
+
 logout = LogoutView.as_view(
     next_page="accounts:login",
 )
